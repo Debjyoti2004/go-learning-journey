@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func emailQueue(emailCh <-chan string, done chan bool) { // Receive-only channel there we can't send data only we can receive
+func emailQueue(emailCh <-chan string, done chan<- bool) { // Receive-only channel there we can't send data only we can receive
 
 	defer func() { done <- true }() // Signal completion when done
 
